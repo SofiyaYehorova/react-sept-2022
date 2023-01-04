@@ -8,4 +8,5 @@ function Marge() {
         </div>
     );
 }
+
 export default Marge;

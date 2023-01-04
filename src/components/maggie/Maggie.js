@@ -8,4 +8,5 @@ function Maggie() {
         </div>
     );
 }
+
 export default Maggie;
