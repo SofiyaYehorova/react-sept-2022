@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Homer from "./components/homer/Homer";
+import Bart from "./components/bart/Bart";
+import Marge from "./components/marge/Marge";
+import Lisa from "./components/lisa/Lisa";
+import Maggie from "./components/maggie/Maggie";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<h1>
+  Simpsons family
+
+</h1>
+        <div className="Simpsons">
+            <Homer/>
+            <Marge/>
+            <Bart/>
+            <Lisa/>
+            <Maggie/>
+        </div>
+
+
     </div>
   );
 }
