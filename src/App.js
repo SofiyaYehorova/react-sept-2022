@@ -19,8 +19,6 @@ function App() {
             <Lisa/>
             <Maggie/>
         </div>
-
-
     </div>
   );
 }
