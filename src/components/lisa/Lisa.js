@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Lisa(props) {
+function Lisa() {
     return (
         <div>
             <p>name: {`Lisa Marie Simpson`} <br/> age: {8} <br/> status: {`alive`} <br/> gender: {`female`}</p>

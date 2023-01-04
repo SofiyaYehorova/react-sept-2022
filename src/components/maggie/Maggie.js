@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Maggie(props) {
+function Maggie() {
     return (
         <div>
             <p>name: {`Margaret Lenny Simpson`} <br/> age: {1} <br/> status: {`alive`} <br/> gender: {`female`}</p>

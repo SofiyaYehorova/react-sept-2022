@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Homer(props) {
+function Homer() {
     return (
         <div>
             <p>name: {`Homer Simpson`} <br/>age:{39} <br/> status: {`alive`} <br/>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Marge(props) {
+function Marge() {
     return (
         <div>
             <p>name: {`Marjorie B. Simpson`} <br/> age: {36} <br/> status: {`alive`} <br/> gender: {`female`}</p>

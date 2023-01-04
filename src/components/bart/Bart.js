@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Bart(props) {
+function Bart() {
     return (
         <div>
             <p>name: {`Bartholomew JoJo Simpson`} <br/> age: {10} <br/> status: {`alive`} <br/> gender: {`male`}</p>
