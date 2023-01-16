@@ -10,6 +10,7 @@ const elevator=(obj)=>{
     setUser(obj)
 };
 
+
 useEffect(()=>{
     userService.getAll().then(({data})=>setUsers(data))
 },[]);

@@ -7,5 +7,5 @@ const urls={
 export {
     baseURL,
     urls
-}
+};
 
