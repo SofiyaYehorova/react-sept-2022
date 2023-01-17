@@ -21,3 +21,4 @@ import {Maggie} from "./components/Maggie/Maggie";
     </div>
   );
 }
+
