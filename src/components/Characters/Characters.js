@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import Character from "../character/Character";
 
-function Characters() {
+import {Character} from "../Character/Character";
+
+export const Characters=()=> {
     let [characters, setCharacters] = useState([]);
 
     fetch(`https://rickandmortyapi.com/api/character`)
@@ -20,5 +21,3 @@ function Characters() {
         </div>
     );
 }
-
-export default Characters;
