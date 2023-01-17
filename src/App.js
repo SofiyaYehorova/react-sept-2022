@@ -1,16 +1,15 @@
 import './App.css';
-import Homer from "./components/homer/Homer";
-import Bart from "./components/bart/Bart";
-import Marge from "./components/marge/Marge";
-import Lisa from "./components/lisa/Lisa";
-import Maggie from "./components/maggie/Maggie";
+import {Homer} from "./components/Homer/Homer";
+import {Bart} from "./components/Bart/Bart";
+import {Marge} from "./components/Marge/Marge";
+import {Lisa} from "./components/Lisa/Lisa";
+import {Maggie} from "./components/Maggie/Maggie";
 
-function App() {
+ export const App=()=> {
   return (
     <div className="App">
 <h1>
   Simpsons family
-
 </h1>
         <div className="Simpsons">
             <Homer/>
@@ -22,6 +21,3 @@ function App() {
     </div>
   );
 }
-
-
-export default App;
