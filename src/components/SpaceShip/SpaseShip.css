@@ -1,0 +1,16 @@
+.Ship{
+    width: 45%;
+
+    display: flex;
+
+
+    flex-direction: column;
+    text-align: center;
+
+    border: 2px solid red;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}

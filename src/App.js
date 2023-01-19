@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import {SpaceShips} from "./components";
 
 function App() {
   return (
     <div className="App">
-
+<SpaceShips/>
     </div>
   );
 }
 
-export default App;
+export{
+  App
+};
