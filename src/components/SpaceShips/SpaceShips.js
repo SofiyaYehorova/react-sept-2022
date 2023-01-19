@@ -5,7 +5,6 @@ import {shipService} from "../../services";
 
 import style from './SpaceShips.css'
 
-
 const SpaceShips = () => {
 
     const [ships, setShips] = useState([]);
