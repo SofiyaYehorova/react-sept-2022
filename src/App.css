@@ -1,0 +1,18 @@
+.App{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.Users{
+    width: 50%;
+
+    display: flex;
+}
+
+.Post{
+    width: 50%;
+
+    display: flex;
+}

@@ -1,12 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+
+import {Posts, Users} from "./components";
+
+import style from './App.css';
 
 function App() {
-  return (
-    <div className="App">
+    let [userId, setUserId] = useState(null);
 
-    </div>
-  );
+    return (
+        <div className="App">
+            <div className="Users">
+                <Users setUserId={setUserId}/>
+            </div>
+           <div className="Post">
+               {userId && <Posts userId={userId}/>}
+           </div>
+
+        </div>
+    );
 }
 
-export default App;
+export {App};
