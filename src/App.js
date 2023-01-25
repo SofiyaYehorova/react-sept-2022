@@ -1,12 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from "react";
+
+import {Cars, CarsForm} from "./components";
+import {carsService} from "./services";
 
 function App() {
-  return (
-    <div className="App">
+    const [cars, setCars] = useState([]);
+    const [updateCar, setUpdateCar] = useState(null);
 
-    </div>
-  );
+    useEffect(()=>{
+        carsService.getAll().then(({data})=>setCars([...data]))
+    },[])
+
+
+    return (
+        <div className="App">
+            <CarsForm setCars={setCars} updateCar={updateCar}/>
+            <hr/>
+            <Cars cars={cars} setUpdateCar={setUpdateCar}/>
+        </div>
+    );
 }
 
-export default App;
+export {
+    App
+};
