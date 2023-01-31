@@ -1,11 +1,24 @@
-function App() {
-  return (
-    <div className="App">
+import {Comments, CommentsForm} from "./components";
+import {useEffect, useState} from "react";
+import {commentsService} from "./services";
 
-    </div>
-  );
+function App() {
+
+    const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        commentsService.getAll().then(({data}) => setComments([...data]))
+    }, [])
+
+    return (
+        <div className="App">
+            <CommentsForm setComments={setComments}/>
+            <hr/>
+            <Comments comments={comments}/>
+        </div>
+    );
 }
 
 export {
-  App
+    App
 }
