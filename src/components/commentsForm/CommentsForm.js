@@ -1,12 +1,14 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
+
 import {commentsService} from "../../services";
 
 const CommentsForm = ({setComments}) => {
-    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode:'all'});
+    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode: 'all'});
 
-    const submit = async(data) => {
-        await commentsService.addComment(data).then(({data})=>setComments((prevState)=>[...prevState, data]))
+    const submit = async (data) => {
+        await commentsService.addComment(data).then(({data}) => setComments((prevState) => [...prevState, data]))
+        reset()
     };
 
     return (
