@@ -4,12 +4,14 @@ import {postsService} from "../../services";
 
 import css from './PostDetailsById.module.css'
 
-const PostDetailsById = ({postId}) => {
+const PostDetailsById = ({postId, state}) => {
 
     const [post, setPost] = useState(null);
 
     useEffect(() => {
-        if (postId) {
+        if (state) {
+            setPost({...state})
+        } else {
             postsService.getPostsById(postId).then(({data}) => setPost(data))
         }
     }, [postId]);
