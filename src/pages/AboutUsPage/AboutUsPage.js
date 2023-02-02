@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Comments = () => {
+const AboutUsPage = () => {
     return (
         <div>
-            Comments
+            AboutUs
         </div>
     );
 };
 
 export {
-    Comments
+    AboutUsPage
 };

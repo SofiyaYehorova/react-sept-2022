@@ -1,0 +1,9 @@
+.Album {
+    border: 2px solid blue;
+    box-sizing: border-box;
+    background: azure;
+
+    display: flex;
+    flex-direction: column;
+
+}
