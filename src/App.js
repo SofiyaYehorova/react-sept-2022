@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
 
 import {AboutPage, HomePage, NotFoundPage, PostDetailsPage, PostsPage, UsersPage} from "./pages";
@@ -11,7 +11,8 @@ function App() {
         <div>
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
-                    <Route index element={<HomePage/>}/>
+                    <Route index element={<Navigate to={'home'}/>}/>
+                    <Route path={'home'} element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
                     <Route path={'posts'} element={<PostsPage/>}>
                         <Route path={':postId'} element={<PostDetailsPage/>}/>
