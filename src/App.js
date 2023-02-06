@@ -1,11 +1,15 @@
-function App() {
-  return (
-    <div className="App">
+import {Comments, Posts} from "./components";
 
-    </div>
-  );
+function App() {
+    return (
+        <div className="App">
+            <Posts/>
+            <hr/>
+            <Comments/>
+        </div>
+    );
 }
 
 export {
-  App
+    App
 }
