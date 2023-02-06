@@ -1,11 +1,43 @@
-function App() {
-  return (
-    <div className="App">
+import {useReducer} from "react";
 
-    </div>
-  );
+function App() {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case'INC1':
+                return {...state, count1: state.count1 + 1}
+            case 'DEC1':
+                return {...state, count1: state.count1 - 1}
+            case'INC2':
+                return {...state, count2: state.count2 + 1}
+            case 'DEC2':
+                return {...state, count2: state.count2 - 1}
+            case 'RESET':
+                return {count1: action.payload, count2: 0}
+            default:
+                return {...state}
+        }
+    };
+
+    const initValue = () => (
+        {count1: 0, count2: 0}
+    );
+
+    const [state, dispatch] = useReducer(reducer, null, initValue);
+    return (
+        <div className="App">
+            <div>Count1:{state.count1}</div>
+            <button onClick={() => dispatch({type: 'INC1'})}>inc</button>
+            <button onClick={() => dispatch({type: 'DEC1'})}>dec</button>
+            <button onClick={() => dispatch({type: 'RESET', payload:25})}>reset</button>
+            <hr/>
+            <div>Count2:{state.count2}</div>
+            <button onClick={() => dispatch({type: 'INC2'})}>inc</button>
+            <button onClick={() => dispatch({type: 'DEC2'})}>dec</button>
+            <button onClick={() => dispatch({type: 'RESET'})}>reset</button>
+        </div>
+    );
 }
 
 export {
-  App
+    App
 }
