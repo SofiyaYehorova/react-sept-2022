@@ -1,11 +1,15 @@
-function App() {
-  return (
-    <div className="App">
+import {Header, Users} from "./components";
 
-    </div>
-  );
+function App() {
+    return (
+        <div className="App">
+            <Header/>
+            <hr/>
+            <Users/>
+        </div>
+    );
 }
 
 export {
-  App
+    App
 }
