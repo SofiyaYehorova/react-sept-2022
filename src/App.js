@@ -1,11 +1,19 @@
-function App() {
-  return (
-    <div className="App">
+import {Cars, Form} from "./components";
+import {useSelector} from "react-redux";
 
-    </div>
-  );
+function App() {
+    const {loading} = useSelector(state => state.cars);
+    return (
+        <div className="App">
+            <Form/>
+            <hr/>
+            {loading &&
+                <div><h2>Loading..........</h2></div>}
+            <Cars/>
+        </div>
+    );
 }
 
 export {
-  App
+    App
 }
