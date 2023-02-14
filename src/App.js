@@ -1,17 +1,12 @@
-import {Cars, Form} from "./components";
-import {useSelector} from "react-redux";
+import {Navigate, Route, Routes} from "react-router-dom";
 
-function App() {
-    const {loading} = useSelector(state => state.cars);
+import {AuthRequireLayout, MainLayout} from "./layout";
+import {CarsPage, LoginPage, RegisterPage} from "./pages";
+
+const App = () => {
     return (
-        <div className="App">
-            <Form/>
-            <hr/>
-            {loading &&
-                <div><h2>Loading..........</h2></div>}
-            <Cars/>
-        </div>
-    );
+
+    )
 }
 
 export {
