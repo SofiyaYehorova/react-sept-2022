@@ -1,11 +1,11 @@
-function App() {
-  return (
-    <div className="App">
+const App=()=>{
+    return (
+        <div>
 
-    </div>
-  );
-}
+        </div>
+    )
+};
 
 export {
-  App
+    App
 }
