@@ -1,10 +1,10 @@
 const baseURL = 'http://owu.linkpc.net/carsAPI/v2'
 
-const cars = './cars';
-const auth = './auth';
+const cars = '/cars';
+const auth = '/auth';
 
 const urls = {
-    urls: {
+    auth: {
         login: auth,
         refresh: `${auth}/refresh`,
         me: `${auth}/me`
@@ -13,7 +13,7 @@ const urls = {
         cars,
         byId: (id) => `${cars}/${id}`
     },
-    users: './users'
+    users: '/users'
 }
 
 export {

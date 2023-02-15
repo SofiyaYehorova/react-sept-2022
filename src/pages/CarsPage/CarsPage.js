@@ -7,7 +7,7 @@ const CarsPage = () => {
 
     const {loading} = useSelector(state => state.cars);
     return (
-        <div className="App">
+        <div>
             <Form/>
             <hr/>
             {loading &&

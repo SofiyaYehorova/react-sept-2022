@@ -21,7 +21,7 @@ const Form = () => {
             setValue('price', carForUpdate.price, {shouldValidate: true})
             setValue('year', carForUpdate.year, {shouldValidate: true})
         }
-    }, [carForUpdate])
+    }, [carForUpdate]);
 
     const save = async (car) => {
         await dispatch(carActions.create({car}))
@@ -31,7 +31,7 @@ const Form = () => {
     const update = async (car) => {
         await dispatch(carActions.updateById({id: carForUpdate.id, car}))
         reset()
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit(carForUpdate ? update : save)}>

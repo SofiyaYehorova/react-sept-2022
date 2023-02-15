@@ -1,5 +1,17 @@
-.Header{
+.Header {
     height: 50px;
     background: cadetblue;
-    color:white;
+    color: white;
+    border-radius: 7px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: coral;
+    margin: 5px;
 }
