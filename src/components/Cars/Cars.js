@@ -2,11 +2,13 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useSearchParams} from "react-router-dom";
 
+
 import {carActions} from "../../redux";
 import {Car} from "../Car/Car";
 
 const Cars = () => {
     const {cars, prev, next} = useSelector(state => state.cars);
+    console.log(cars);
     const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams({page: '1'});
 

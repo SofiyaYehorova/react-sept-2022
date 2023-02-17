@@ -12,6 +12,7 @@ const initialState = {
 
 };
 
+
 const getAll = createAsyncThunk(
     'carSlice/getAll',
     async ({page}, thunkAPI) => {
@@ -72,8 +73,9 @@ const carSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                const {prev, next, item} = action.payload;
-                state.cars = item
+                const {prev, next, items} = action.payload;
+                // state.cars = action.payload
+                state.cars = items
                 state.prev = prev
                 state.next = next
                 state.loading = false
