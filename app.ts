@@ -1,118 +1,105 @@
-// 1) створити інтерфейс на основі цього объекта:
-//     Зверніть увагу там де масиви... в них може бути багато однотипних обїектів
-
-// version 1
-
-// interface IRocket{
-//     mission_name: string,
-//     launch_date_local: number,
-//     launch_site: {
-//     site_name_long: number
-// },
-//     links: {
-//     article_link: boolean,
-//         video_link: string
-// },
-//     rocket: {
-//     rocket_name: string,
-//         first_stage: {
-//         cores: [
-//             {
-//                 flight: number,
-//                 core: {
-//                     reuse_count: number,
-//                     status: string | boolean
-//                 }
-//             }
-//         ]
-//     },
-//     second_stage: {
-//         payloads: [
-//             {
-//                 payload_type: string,
-//                 payload_mass_kg: number,
-//                 payload_mass_lbs: number
-//             }
-//         ]
-//     }
-// }
+// type MyType = number | string[] | boolean;
+// const test = (name: string): MyType => {
+//     return [name]
 // }
 
-// Version 2
+// console.log(test('Max'));
 
-// interface ICores {
-//     flight: number,
-//     core: {
-//         reuse_count: number,
-//         status: string | boolean
-//     }
+// const arr: number[] = [1, 2, 3, 4];
+// const arr: [number, string] = [2, '2'];
+
+// interface IUser<DATA, ITEM> {
+//     name: string;
+//     surname: string;
+//     age: number;
+//     status: boolean;
+//     data: DATA;
+//     data2: ITEM;
 // }
+
+
+// const user: IUser = {name: 'Max', surname: 'popov', age: 17, status: true}
+
+// const user1: Partial<IUser> = {name: 'Igor', age: 20}
+
+// const user: IUser<number[]> = {name: 'Dima', surname: 'popov', age: 22, status: false, data: [1, 2, 3, 4]};
+
+// const getName = (user: IUser): string => {
+//     return user.name
+// }
+
+
+// class User {
+//     constructor(private name: string, private age: number) {
 //
-// interface IPayloads {
-//     payload_type: string,
-//     payload_mass_kg: number,
-//     payload_mass_lbs: number
-// }
-//
-//
-// interface IRocket {
-//     mission_name: string,
-//     launch_date_local: number,
-//     launch_site: {
-//         site_name_long: number
-//     },
-//     links: {
-//         article_link: boolean,
-//         video_link: string
-//     },
-//     rocket: {
-//         rocket_name: string,
-//         first_stage: {
-//             cores: ICores[]
-//         },
-//         second_stage: {
-//             payloads: IPayloads[]
-//         }
 //     }
 // }
 
-// ---------------------------------------------------------------------------—————————
-// 2) протипізувати функції:
+// interface IShape {
+//     area: () => number;
+//     perimeter: () => number;
+// }
 //
-//     const user = {
-//         name:Max,
-//         age:18,
-//         gender:'male'
+// interface IGreeting {
+//     greeting: () => void;
+// }
+//
+// class Rectangle implements IGreeting, IShape {
+//     constructor(private a: number, private b: number) {
 //     }
+//
+//     greeting(): void {
+//         console.log('hello');
+//     }
+//
+//     area(): number {
+//         return this.a * this.b;
+//     }
+//
+//     perimeter(): number {
+//         return this.a * 2 + this.b * 2;
+//     }
+// }
 
-interface IUser {
-    name: string;
-    age: number;
-    gender: string
-}
+// const rectangle = new Rectangle(2, 4);
+// rectangle.greeting()
+// console.log(rectangle.area());
+// console.log(rectangle.perimeter());
 
-const user: IUser = {
-    name: 'Max',
-    age: 18,
-    gender: 'male'
-}
+// class Triangle implements IShape {
+//     constructor(private a: number, private b: number, private c: number) {
+//     }
+//
+//     area(): number {
+//         return this.a * this.b * this.c;
+//     }
+//
+//     perimeter(): number {
+//         return this.a + this.b + this.c;
+//     }
+// }
+
+// const triangle = new Triangle(2,2, 4);
+// console.log(triangle.area());
+// console.log(triangle.perimeter());
+
+// const shapes: IShape[] = [new Rectangle(2, 4), new Triangle(2, 2, 4)];
+// for (let shape of shapes) {
+//     console.log(shape.area());
+//     console.log(shape.perimeter());
+// }
+
+// const x = () => {
+//     return 20
+// }
+//
+// type MyType = ReturnType<typeof x>;
+//
+// const a:MyType='hhhh'
 
 
-function sum(a: number, b: number): number {
-    return a + b
-}
+import {userService} from "./services/userService";
 
-function showSum(a: number, b: number): void {
-    console.log(a + b);
-}
-
-function incAge(someUser: IUser, inc: number):IUser{
-    someUser.age += inc
-    return someUser
-}
-
-console.log(sum(1, 2));
-showSum(2, 3)
-incAge(user, 2)
-
-
+userService.getAll().then(({data})=>{
+    console.log(data[0].address.geo);
+})
